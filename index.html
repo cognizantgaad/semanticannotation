@@ -1,0 +1,1113 @@
+<!--
+UNIQUE ADDITIONS INCLUDED:
+1. Voice Assistant Floating Orb
+2. Live Accessibility Score Meter
+3. AI Accessibility Scanner Animation
+4. Real-time Semantic Status Chips
+5. Animated Focus Path Visualizer
+6. Accessibility Radar Glow Effects
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Advanced Accessibility Experience</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left,#4338ca,#020617);
+  overflow:hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+}
+
+/* BACKGROUND GLOW */
+
+.bg-glow{
+  position:absolute;
+  width:700px;
+  height:700px;
+  border-radius:50%;
+  background:rgba(99,102,241,0.18);
+  filter:blur(120px);
+  top:-250px;
+  left:-200px;
+  animation:pulseGlow 8s infinite alternate;
+}
+
+@keyframes pulseGlow{
+  from{
+    transform:scale(1);
+  }
+  to{
+    transform:scale(1.2);
+  }
+}
+
+/* MAIN LAYOUT */
+
+.wrapper{
+  width:1450px;
+  max-width:100%;
+  display:flex;
+  gap:40px;
+  position:relative;
+  z-index:2;
+}
+
+/* ========================= */
+/* LEFT MOBILE SECTION */
+/* ========================= */
+
+.mobile-section{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.mobile-frame{
+  width:380px;
+  height:760px;
+  background:#0f172a;
+  border-radius:42px;
+  padding:16px;
+  position:relative;
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.45);
+  animation:floatPhone 6s ease-in-out infinite;
+}
+
+@keyframes floatPhone{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+.mobile-screen{
+  width:100%;
+  height:100%;
+  border-radius:34px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#eef2ff,#ffffff);
+  position:relative;
+}
+
+/* DYNAMIC ACCESSIBILITY RADAR */
+
+.radar{
+  position:absolute;
+  top:-80px;
+  right:-80px;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  border:2px solid rgba(99,102,241,0.2);
+  animation:rotateRadar 12s linear infinite;
+}
+
+.radar::before{
+  content:"";
+  position:absolute;
+  inset:20px;
+  border-radius:50%;
+  border:2px dashed rgba(99,102,241,0.2);
+}
+
+.radar::after{
+  content:"";
+  position:absolute;
+  width:50%;
+  height:2px;
+  background:#6366f1;
+  top:50%;
+  left:50%;
+  transform-origin:left center;
+  animation:scanRadar 2s linear infinite;
+}
+
+@keyframes rotateRadar{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes scanRadar{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
+}
+
+/* HEADER */
+
+header{
+  height:150px;
+  background:
+    linear-gradient(135deg,#2563eb,#7c3aed);
+  padding:34px 24px;
+  color:white;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+header::after{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.08);
+  top:-180px;
+  right:-100px;
+}
+
+header h1{
+  position:relative;
+  z-index:2;
+  font-size:28px;
+}
+
+header p{
+  position:relative;
+  z-index:2;
+  margin-top:10px;
+  opacity:0.9;
+}
+
+/* ACCESSIBILITY SCORE */
+
+.score-widget{
+  position:absolute;
+  right:18px;
+  bottom:-38px;
+  width:95px;
+  height:95px;
+  border-radius:50%;
+  background:white;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.12);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+  animation:bounceScore 3s infinite;
+}
+
+@keyframes bounceScore{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-8px);
+  }
+}
+
+.score-widget h2{
+  color:#4f46e5;
+  font-size:28px;
+}
+
+.score-widget span{
+  font-size:11px;
+  color:#64748b;
+}
+
+/* FORM */
+
+.form-area{
+  padding:70px 24px 24px;
+}
+
+.form-card{
+  background:white;
+  border-radius:28px;
+  padding:28px;
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.08);
+}
+
+/* LIVE STATUS CHIPS */
+
+.status-row{
+  display:flex;
+  gap:10px;
+  margin-bottom:24px;
+  flex-wrap:wrap;
+}
+
+.status-chip{
+  padding:8px 14px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:700;
+  background:#eef2ff;
+  color:#4338ca;
+  animation:chipPulse 3s infinite;
+}
+
+@keyframes chipPulse{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.06);
+  }
+}
+
+/* FORM GROUP */
+
+.form-group{
+  margin-bottom:30px;
+}
+
+.label-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+label{
+  font-weight:700;
+  color:#0f172a;
+}
+
+.tooltip-btn{
+  width:24px;
+  height:24px;
+  border:none;
+  border-radius:50%;
+  background:#4f46e5;
+  color:white;
+  cursor:pointer;
+  transition:.4s;
+}
+
+.tooltip-btn:hover{
+  transform:rotate(180deg) scale(1.1);
+}
+
+.tooltip{
+  display:none;
+  margin-top:10px;
+  background:#111827;
+  color:white;
+  padding:14px;
+  border-radius:16px;
+  font-size:13px;
+  animation:fadeIn .4s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+input[type="text"]{
+  width:100%;
+  padding:18px;
+  border-radius:18px;
+  border:2px solid #cbd5e1;
+  outline:none;
+  transition:.4s;
+}
+
+input[type="text"]:focus{
+  border-color:#4f46e5;
+  box-shadow:
+    0 0 0 6px rgba(79,70,229,0.14);
+  transform:scale(1.02);
+}
+
+/* CHECKBOX */
+
+.checkbox-row{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.checkbox-row input{
+  width:20px;
+  height:20px;
+}
+
+/* BUTTON */
+
+.submit-btn{
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:20px;
+  background:
+    linear-gradient(135deg,#2563eb,#7c3aed);
+  color:white;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  overflow:hidden;
+  position:relative;
+  transition:.4s;
+}
+
+.submit-btn:hover{
+  transform:translateY(-4px);
+  box-shadow:
+    0 16px 30px rgba(79,70,229,0.3);
+}
+
+/* VOICE ASSISTANT ORB */
+
+.voice-assistant{
+  position:absolute;
+  bottom:25px;
+  right:25px;
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  background:
+    linear-gradient(135deg,#06b6d4,#4f46e5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+  box-shadow:
+    0 12px 25px rgba(79,70,229,0.35);
+  animation:voicePulse 2s infinite;
+}
+
+@keyframes voicePulse{
+  0%{
+    box-shadow:
+      0 0 0 0 rgba(79,70,229,0.45);
+  }
+  70%{
+    box-shadow:
+      0 0 0 20px rgba(79,70,229,0);
+  }
+  100%{
+    box-shadow:
+      0 0 0 0 rgba(79,70,229,0);
+  }
+}
+
+/* ========================= */
+/* RIGHT PANEL */
+/* ========================= */
+
+.annotation-section{
+  flex:1;
+}
+
+.annotation-panel{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.12);
+  backdrop-filter:blur(20px);
+  border-radius:32px;
+  padding:35px;
+  color:white;
+  min-height:760px;
+  position:relative;
+  overflow:hidden;
+}
+
+.annotation-title{
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+.annotation-sub{
+  color:#cbd5e1;
+  margin-bottom:35px;
+}
+
+/* SCANNER BAR */
+
+.scanner{
+  width:100%;
+  height:8px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+  overflow:hidden;
+  margin-bottom:35px;
+}
+
+.scanner::before{
+  content:"";
+  display:block;
+  width:40%;
+  height:100%;
+  background:
+    linear-gradient(90deg,#06b6d4,#6366f1);
+  animation:scanMove 2s infinite linear;
+}
+
+@keyframes scanMove{
+  from{
+    transform:translateX(-100%);
+  }
+  to{
+    transform:translateX(300%);
+  }
+}
+
+/* CARD */
+
+.annotation-card{
+  background:rgba(255,255,255,0.06);
+  border-radius:28px;
+  padding:30px;
+  animation:cardFade .5s ease;
+}
+
+@keyframes cardFade{
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.annotation-card h3{
+  font-size:28px;
+  margin-bottom:24px;
+  color:#93c5fd;
+}
+
+.annotation-card ul{
+  padding-left:24px;
+  line-height:2;
+}
+
+.annotation-card li{
+  margin-bottom:10px;
+}
+
+/* FOCUS VISUALIZER */
+
+.focus-visualizer{
+  margin-top:30px;
+}
+
+.focus-title{
+  margin-bottom:18px;
+  color:#93c5fd;
+}
+
+.focus-flow{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.focus-node{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.08);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  animation:focusPulse 2s infinite;
+}
+
+@keyframes focusPulse{
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.15);
+  }
+}
+
+.arrow{
+  width:40px;
+  height:2px;
+  background:white;
+  position:relative;
+}
+
+.arrow::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:-4px;
+  border-left:8px solid white;
+  border-top:5px solid transparent;
+  border-bottom:5px solid transparent;
+}
+
+/* INTERACTIVE */
+
+.interactive{
+  cursor:pointer;
+  transition:.3s;
+}
+
+.active{
+  transform:scale(1.02);
+  box-shadow:
+    0 0 0 6px rgba(79,70,229,0.15);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+  body{
+    overflow:auto;
+  }
+
+  .wrapper{
+    flex-direction:column;
+  }
+
+  .annotation-panel{
+    min-height:auto;
+  }
+
+}
+
+/* ================================= */
+/* GLOBAL EVENT HEADER */
+/* ================================= */
+
+.global-event-header{
+
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:78px;
+
+  padding:0 40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  z-index:999;
+
+  backdrop-filter:blur(18px);
+
+  background:
+    rgba(15,23,42,0.55);
+
+  border-bottom:
+    1px solid rgba(255,255,255,0.08);
+
+}
+
+/* LEFT */
+
+.event-left{
+  width:180px;
+}
+
+/* CENTER TITLE */
+
+.event-title{
+
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  position:absolute;
+  left:50%;
+
+  transform:translateX(-50%);
+}
+
+.event-title h1{
+
+  color:white;
+
+  font-size:30px;
+  font-weight:700;
+
+  letter-spacing:.4px;
+
+  text-align:center;
+}
+
+/* LIVE DOT */
+
+.live-dot{
+
+  width:14px;
+  height:14px;
+
+  border-radius:50%;
+
+  background:#22c55e;
+
+  animation:livePulse 2s infinite;
+}
+
+@keyframes livePulse{
+
+  0%{
+    box-shadow:
+      0 0 0 0 rgba(34,197,94,0.5);
+  }
+
+  70%{
+    box-shadow:
+      0 0 0 14px rgba(34,197,94,0);
+  }
+
+  100%{
+    box-shadow:
+      0 0 0 0 rgba(34,197,94,0);
+  }
+
+}
+
+/* RIGHT LOGO */
+
+.event-logo{
+
+  width:180px;
+
+  display:flex;
+  justify-content:flex-end;
+}
+
+.event-logo img{
+
+  height:46px;
+
+  object-fit:contain;
+
+  filter:
+    drop-shadow(0 6px 18px rgba(0,0,0,0.35));
+
+  transition:.4s;
+}
+
+.event-logo img:hover{
+
+  transform:scale(1.06);
+}
+
+/* BODY SPACING */
+
+body{
+
+  padding-top:90px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="global-event-header">
+
+  <!-- LEFT EMPTY SPACE -->
+  <div class="event-left"></div>
+
+  <!-- CENTER TITLE -->
+
+  <div class="event-title">
+
+    <div class="live-dot"></div>
+
+    <h1>
+      Global Accessibility Awareness Day 2026
+    </h1>
+
+  </div>
+
+</div>
+
+<div class="bg-glow"></div>
+
+<div class="wrapper">
+
+  <!-- MOBILE UI -->
+
+  <section class="mobile-section">
+
+    <div class="mobile-frame">
+
+      <div class="mobile-screen">
+
+        <div class="radar"></div>
+
+        <!-- HEADER -->
+
+        <header class="interactive"
+          data-title="Header Accessibility"
+          data-points='[
+            "Use semantic header landmark",
+            "Maintain heading hierarchy",
+            "High contrast text for readability",
+            "Responsive across zoom levels",
+            "Screen reader accessible"
+          ]'>
+
+          <h1>Accessible Form</h1>
+          <p>AI-powered semantic experience</p>
+
+          <div class="score-widget">
+            <h2>100%</h2>
+            <span>A11Y Score</span>
+          </div>
+
+        </header>
+
+        <!-- FORM -->
+
+        <div class="form-area">
+
+          <div class="form-card">
+
+            <div class="status-row">
+              <div class="status-chip">ARIA Valid</div>
+              <div class="status-chip">Keyboard Ready</div>
+              <div class="status-chip">WCAG AA</div>
+            </div>
+
+            <!-- INPUT -->
+
+            <div class="form-group interactive"
+              data-title="Input Field Accessibility"
+              data-points='[
+                "Use label association with input",
+                "Keyboard and screen reader accessible",
+                "Visible focus indicator required",
+                "aria-describedby should connect helper text",
+                "Proper validation message should exist",
+                "Placeholder should not replace label"
+              ]'>
+
+              <div class="label-row">
+
+                <label for="name">Full Name</label>
+
+<button
+  class="tooltip-btn interactive"
+  id="tipBtn"
+
+  data-title="Tooltip Accessibility"
+
+  data-points='[
+    "Tooltip trigger should be keyboard accessible",
+    "Use aria-describedby to associate tooltip content",
+    "Tooltip should appear on focus and hover",
+    "Tooltip content must be readable by screen readers",
+    "Do not rely only on hover interaction",
+    "Tooltip should dismiss properly on Escape key",
+    "Use role=tooltip for semantic meaning"
+  ]'
+
+  aria-label="More information"
+  aria-describedby="helper"
+  aria-expanded="false"
+>
+  ?
+</button>
+
+              </div>
+
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                aria-describedby="helper"/>
+
+              <div
+  class="tooltip"
+  id="helper"
+  role="tooltip"
+>
+                Use your official name for accessibility validation.
+              </div>
+
+            </div>
+
+            <!-- CHECKBOX -->
+
+            <div class="form-group interactive"
+              data-title="Checkbox Accessibility"
+              data-points='[
+                "Checkbox should have associated label",
+                "State should be announced to screen readers",
+                "Keyboard accessible via tab and space",
+                "Focus state should be visible",
+                "Use semantic input type checkbox"
+              ]'>
+
+              <label class="checkbox-row">
+
+                <input type="checkbox"/>
+
+                <span>
+                  I agree to Terms & Conditions
+                </span>
+
+              </label>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <div class="interactive"
+              data-title="Button Accessibility"
+              data-points='[
+                "Use semantic button element",
+                "Accessible name should be meaningful",
+                "Support keyboard activation",
+                "Visible focus state required",
+                "Loading state should be announced"
+              ]'>
+
+              <button class="submit-btn">
+                Submit
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- VOICE ORB -->
+
+        <div class="voice-assistant interactive"
+          data-title="Voice Assistant Accessibility"
+          data-points='[
+            "Voice interactions should include transcripts",
+            "Provide keyboard alternative for voice actions",
+            "Use aria-live for spoken feedback",
+            "Do not rely only on audio cues",
+            "Microphone controls must be accessible"
+          ]'>
+          🎙
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RIGHT PANEL -->
+
+  <section class="annotation-section">
+
+    <div class="annotation-panel">
+
+      <h2 class="annotation-title">
+        A11y Semantic Annotations
+      </h2>
+
+      <p class="annotation-sub">
+        Click any interactive component to reveal
+        semantic accessibility annotations.
+      </p>
+
+
+      <div class="annotation-card" id="annotationCard">
+
+        <h3>Interactive Semantic Guide</h3>
+
+        <ul>
+          <li>Select any component from the mobile UI.</li>
+          <li>Semantic accessibility guidance appears here.</li>
+          <li>Includes keyboard, ARIA and screen reader support.</li>
+          <li>Animated accessibility indicators improve learning.</li>
+        </ul>
+
+      </div>
+
+      <!-- FOCUS FLOW -->
+
+      <div class="focus-visualizer">
+
+        <h4 class="focus-title">
+          Keyboard Focus Navigation
+        </h4>
+
+        <div class="focus-flow">
+
+          <div class="focus-node">1</div>
+          <div class="arrow"></div>
+
+          <div class="focus-node">2</div>
+          <div class="arrow"></div>
+
+          <div class="focus-node">3</div>
+          <div class="arrow"></div>
+
+          <div class="focus-node">4</div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</div>
+
+<script>
+
+const interactive =
+  document.querySelectorAll(".interactive");
+
+const card =
+  document.getElementById("annotationCard");
+
+interactive.forEach(item=>{
+
+  item.addEventListener("click",()=>{
+
+    interactive.forEach(el=>{
+      el.classList.remove("active");
+    });
+
+    item.classList.add("active");
+
+    const title =
+      item.dataset.title;
+
+    const points =
+      JSON.parse(item.dataset.points);
+
+    card.innerHTML = `
+      <h3>${title}</h3>
+
+      <ul>
+        ${points.map(point=>`
+          <li>${point}</li>
+        `).join("")}
+      </ul>
+    `;
+
+    card.style.animation="none";
+
+    setTimeout(()=>{
+      card.style.animation=
+        "cardFade .5s ease";
+    },10);
+
+  });
+
+});
+
+/* TOOLTIP */
+
+const tipBtn =
+  document.getElementById("tipBtn");
+
+const helper =
+  document.getElementById("helper");
+
+function toggleTooltip(show){
+
+  helper.style.display =
+    show ? "block" : "none";
+
+  tipBtn.setAttribute(
+    "aria-expanded",
+    show
+  );
+
+}
+
+/* CLICK SUPPORT */
+
+tipBtn.addEventListener("click",(e)=>{
+
+  e.stopPropagation();
+
+  const isVisible =
+    helper.style.display === "block";
+
+  toggleTooltip(!isVisible);
+
+});
+
+/* KEYBOARD SUPPORT */
+
+tipBtn.addEventListener("keydown",(e)=>{
+
+  if(e.key === "Enter" || e.key === " "){
+
+    e.preventDefault();
+
+    const isVisible =
+      helper.style.display === "block";
+
+    toggleTooltip(!isVisible);
+
+  }
+
+  if(e.key === "Escape"){
+
+    toggleTooltip(false);
+
+  }
+
+});
+
+/* FOCUS ACCESSIBILITY */
+
+tipBtn.addEventListener("focus",()=>{
+
+  toggleTooltip(true);
+
+});
+
+tipBtn.addEventListener("blur",()=>{
+
+  toggleTooltip(false);
+
+});
+
+</script>
+
+</body>
+</html>
